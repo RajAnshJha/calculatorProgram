@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.js"></script>
+    <script>
+       function backspace(){
+        var displayedValue = document.getElementById("display").value;
+        displayedValue = displayedValue.substr(0,displayedValue.length-1);
+        document.getElementById("display").value = displayedValue;
+       }
+       function Display(typedVal){
+        document.getElementById("display").value =document.getElementById("display").value+ typedVal;
+       }
+       function calculate(){
+        document.getElementById("display").value = eval(document.getElementById("display").value);
+       }
+       function clearValue(){
+        document.getElementById("display").value = " ";
+       }
+       
+    </script>
+</head>
+<body>
+    <h2 style="text-align: center;">Calculator</h2>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-4">
+                <div class="card bg-dark">
+                    <div class="card-body">
+                        <form class="d-flex">
+                            <input type="button" value="C" class="btn btn-danger" onclick="clearValue()">
+                            <input type="text" id="display" class="form-control">
+                        </form>
+                        <div class="row mt-2">
+                            <div class="col-3">
+                                <input type="button" value="BS" class="btn btn-warning mx-auto d-block" onclick="backspace()">
+                            </div>
+                            <div class="col-3">
+                                <input type="button" value="1" id="button1" class="btn btn-primary mx-auto d-block" onclick="Display('1')">
+                            </div>
+                            <div class="col-3">
+                                <input type="button" value="2" id="button2" class="btn btn-primary mx-auto d-block" onclick="Display('2')">
+                            </div>
+                            <div class="col-3">
+                                <input type="button" value="+" class="btn btn-primary mx-auto d-block" onclick="Display('+')">
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-3">
+                                <input type="button" value="3" class="btn btn-primary mx-auto d-block" onclick="Display('3')">
+                            </div>
+                            <div class="col-3">
+                                <input type="button" value="4" class="btn btn-primary mx-auto d-block" onclick="Display('4')">
+                            </div>
+                            <div class="col-3">
+                                <input type="button" value="5" class="btn btn-primary mx-auto d-block" onclick="Display('5')">
+                            </div>
+                            <div class="col-3">
+                                <input type="button" value="-" class="btn btn-primary mx-auto d-block" onclick="Display('-')">
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-3">
+                                <input type="button" value="6" class="btn btn-primary mx-auto d-block" onclick="Display('6')">
+                            </div>
+                            <div class="col-3">
+                                <input type="button" value="7" class="btn btn-primary mx-auto d-block" onclick="Display('7')">
+                            </div>
+                            <div class="col-3">
+                                <input type="button" value="8" class="btn btn-primary mx-auto d-block" onclick="Display('8')">
+                            </div>
+                            <div class="col-3">
+                                <input type="button" value="*" class="btn btn-primary mx-auto d-block" onclick="Display('*')">
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-3">
+                                <input type="button" value="9" class="btn btn-primary mx-auto d-block" onclick="Display('9')">
+                            </div>
+                            <div class="col-3">
+                                <input type="button" value="0" class="btn btn-primary mx-auto d-block" onclick="Display('0')">
+                            </div>
+                            <div class="col-3">
+                                <input type="button" value="=" class="btn btn-primary mx-auto d-block" onclick="calculate()">
+                            </div>
+                            <div class="col-3">
+                                <input type="button" value="/" class="btn btn-primary mx-auto d-block" onclick="Display('/')">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>       
+</body>
+</html>
